@@ -25,7 +25,7 @@
 
         // ng-show table 
         $scope.isDone = function () {
-            return $scope.dict !== undefined;
+            return ($scope.dict !== undefined);
         };
 
         // disable/enable analysis btn 
@@ -38,7 +38,6 @@
             $scope.input_text = "";
             $scope.max_results = "";
             $scope.dict = undefined;
-            $scope.max_results = undefined;
         };
 
         // analysis_btn ng-click
