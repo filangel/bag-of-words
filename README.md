@@ -9,7 +9,7 @@ Text Analysis
 
 ### Output Fields:
 
-> Table: <word, frequency> pairs, sorted by frequency.
+> Table: (word, frequency) pairs, sorted by frequency.
 
 ### Performance Constraints:
 
