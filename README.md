@@ -15,4 +15,4 @@ Text Analysis
 
 Time Complexity: __O(n)__, where n is the number of characters in the text.
 
-[Demo](https://filangel.github.io/text_analysis) 
+[Demo](https://filangel.github.io/text) 
