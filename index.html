@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <title>Text Analysis</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="app/styles.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0-rc.2/angular.min.js"></script>
+</head>
+
+<body class="container">
+    <div ng-controller="mainController">
+        <header>
+            <div class="jumbotron">
+                <h1>Text Analysis</h1>
+            </div>
+        </header>
+        <main>
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <textarea class="form-control" ng-model="input_text" rows="5" placeholder="Input Text"></textarea>
+                        <!-- Input Text -->
+                        <br>
+                        <input class="form-control" type="text" ng-model="max_results" placeholder="Max Results" ng-keypress="isNumber($event)" />
+                        <!-- Maximum Results -->
+                        <br>
+                        <button type="button" class="btn btn-success" ng-disabled="isReady()" ng-click="analiseText()">Analysis</button>
+                        <!-- Analysis Button -->
+                        <button type="button" class="btn btn-danger" ng-click="resetText()">Reset</button>
+                        <!-- Reset Button -->
+                        <a href="app/doc.html" type="button" class="btn btn-warning" style="position: absolute; right: 1em;" ng-click="analiseText()">Documentation</a>
+                        <!-- Documentation Button -->
+                    </div>
+                    <!-- Input Fields -->
+                    <table class="table table-hover" ng-show="isDone()">
+                        <thead>
+                            <tr>
+                                <th>Word</th>
+                                <th>Frequency</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="key in sortedKeys">
+                                <td>{{ key }}</td>
+                                <td>{{ dict.get(key) }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- Data Analysis Table -->
+                </div>
+            </div>
+        </main>
+        <footer class="bd-footer text-muted">
+            <div class="container">
+                <ul class="bd-footer-links">
+                    <li><a href="https://github.com/filangel">GitHub</a></li>
+                    <li><a href="https://linkedin.com/in/filangel">LinkedIn</a></li>
+                </ul>
+                <p>Designed and built by <strong>@filangel<strong>.</p>
+            </div>
+        </footer>
+    </div>
+    <script src="app/app.js"></script>
+</body>
+
+</html>
